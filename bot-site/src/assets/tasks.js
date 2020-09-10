@@ -40,3 +40,8 @@ const types = {
     RADIAL: 'Radial',
     AERONAUTICAL: 'Aeronautical'
 };
+
+module.exports = { 
+  tasks, 
+  types 
+};

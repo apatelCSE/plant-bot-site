@@ -1,6 +1,7 @@
-initial plan:
-use C++ for development
-create Robot instances
-    Robot.name = ""
-    Robot.type = ""
-    Robot.completed_tasks = []
+Components of the React App:
+- Form to build the robot
+- Task Center where you can see what each robot is working on/activate tasks
+- Leaderboard to view task completion rankings
+
+Ideas:
+Maybe each task has a difficulty and that factors into the ranking
