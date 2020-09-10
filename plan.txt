@@ -1,0 +1,6 @@
+initial plan:
+use C++ for development
+create Robot instances
+    Robot.name = ""
+    Robot.type = ""
+    Robot.completed_tasks = []
