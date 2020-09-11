@@ -32,16 +32,4 @@ const tasks = [
     },
 ]
 
-const types = { 
-    UNIPEDAL: 'Unipedal',
-    BIPEDAL: 'Bipedal',
-    QUADRUPEDAL: 'Quadrupedal',
-    ARACHNID: 'Arachnid',
-    RADIAL: 'Radial',
-    AERONAUTICAL: 'Aeronautical'
-};
-
-module.exports = { 
-  tasks, 
-  types 
-};
+module.exports = {tasks};

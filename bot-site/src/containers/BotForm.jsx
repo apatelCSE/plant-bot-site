@@ -17,8 +17,8 @@ class BotForm extends Component {
 
             typeOptions: ['Unipedal', 'Bipedal', 'Quadrupedal', 'Arachnid', 'Radial', 'Aeronautical']
         }
-        this.handleFormSubmit = this.handleFormSubmit.bind(this);
         this.handleInput = this.handleInput.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleInput(e) {
@@ -34,27 +34,19 @@ class BotForm extends Component {
         )
     }
 
-    handleFormSubmit(e) {
+    handleSubmit(e) {
         e.preventDefault();
         let botData = this.state.newBot;
-
-        fetch('http://example.com',{
-            method: "POST",
-            body: JSON.stringify(botData),
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-        }).then(response => {
-            response.json().then(data => {
-                console.log("Successful" + data);
-            })
-        })
+        console.log(botData.name);
+        console.log(botData.type)
+        this.props.addBotNameToState(botData.name);
+        this.props.addBotTypeToState(botData.type);
+        this.props.addBotToState();
     }
     
     render() {
         return(
-            <form className="container" onSubmit={this.handleFormSubmit}>
+            <form className="container" onSubmit={this.handleSubmit}>
                 <Input inputType={'text'}
                     title = {'Bot Name'}
                     name = {'name'}
@@ -71,10 +63,9 @@ class BotForm extends Component {
                     handleChange = {this.handleInput}
                 /> {/* Bot Type */}
 
-                <Button
-                    action = {this.handleFormSubmit}
+                <Button title = {'Build'}
+                    action = {this.handleSubmit}
                     type = {'primary'}
-                    title = {'Build'}
                     style = {buttonStyle}
                 /> {/* Build a Bot */}
             </form>
