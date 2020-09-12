@@ -10,38 +10,40 @@ class BotForm extends Component {
         super(props);
 
         this.state = {
-            newBot: {
-                name: '',
-                type: []
-            },
+            newBotName : '',
+            newBotType : [],
 
             typeOptions: ['Unipedal', 'Bipedal', 'Quadrupedal', 'Arachnid', 'Radial', 'Aeronautical']
         }
-        this.handleInput = this.handleInput.bind(this);
+        this.handleNameChange = this.handleNameChange.bind(this);
+        this.handleTypeChange = this.handleTypeChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleInput(e) {
+    handleNameChange(e) {
         let value = e.target.value;
-        let name = e.target.name;
-        this.setState( prevState => {
-            return {
-                newBot : {
-                    ...prevState.newBot, [name]: value
-                }
-            }
-        }, () => console.log(this.state.newBot)
-        )
+        this.setState({newBotName : value});
+        this.props.updateNewBot(e);
+    }
+
+    handleTypeChange(e) {
+        let value = e.target.value;
+        this.setState({newBotType : value});
+        this.props.updateNewBot(e);
     }
 
     handleSubmit(e) {
         e.preventDefault();
-        let botData = this.state.newBot;
-        console.log(botData.name);
-        console.log(botData.type)
-        this.props.addBotNameToState(botData.name);
-        this.props.addBotTypeToState(botData.type);
-        this.props.addBotToState();
+        console.log(this.state.newBotName);
+        console.log(this.state.newBotType);
+        if (this.state.newBotName === '' || this.state.newBotType === '') {
+            alert('Please initialize a name and a type.');
+        } else {
+            this.props.addBotToState();
+            this.setState({newBotName: "", newBotType: []})
+            console.log(this.state.newBotName);
+            console.log(this.state.newBotType);
+        }
     }
     
     render() {
@@ -50,17 +52,17 @@ class BotForm extends Component {
                 <Input inputType={'text'}
                     title = {'Bot Name'}
                     name = {'name'}
-                    value = {this.state.newBot.name}
+                    value = {this.state.newBotName}
                     placeholder = {'Enter the bot\'s name'}
-                    handleChange = {this.handleInput}
+                    handleChange = {this.handleNameChange}
                 /> {/* Bot Name */}
 
                 <Select title={'Type'}
                     name={'type'}
                     options = {this.state.typeOptions}
-                    value = {this.state.newBot.type}
+                    value = {this.state.newBotType}
                     placeholder = {'Select Type'}
-                    handleChange = {this.handleInput}
+                    handleChange = {this.handleTypeChange}
                 /> {/* Bot Type */}
 
                 <Button title = {'Build'}

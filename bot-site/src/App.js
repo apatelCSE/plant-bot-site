@@ -11,48 +11,46 @@ class App extends Component {
       bots : [],
       activeBotName : '',
       activeBotType : '',
-      newBotName : '',
-      newBotType : ''
+      newBot: {
+        name: '',
+        type: []
+      }
     };
 
-    this.addBotNameToState = this.addBotNameToState.bind(this);
-    this.addBotTypeToState = this.addBotTypeToState.bind(this);
+    this.updateNewBot = this.updateNewBot.bind(this);
     this.addBotToState = this.addBotToState.bind(this);
   };
 
-  addBotNameToState(name) {
-    this.setState({newBotName : name});
-    console.log(this.state.newBotName);
-  };
-
-  addBotTypeToState(type) {
-    this.setState({newBotType : type});
-    console.log(this.state.newBotType);
+  updateNewBot(e) {
+    let value = e.target.value;
+    let name = e.target.name;
+    this.setState( prevState => {
+        return {
+            newBot : {
+                ...prevState.newBot, [name]: value
+            }
+        }
+    }, () => console.log(this.state.newBot)
+    )
   };
 
   addBotToState() {
     const tasks = data.tasks;
     const fiveTasks = shuffleFive(tasks);
-
-    console.log(this.state.newBotName);
-    console.log(this.state.newBotType);
     
-    if (this.state.newBotName == '' || this.state.newBotType == '') {
-      alert('Please initialize a name and a type.');
-    } else {
-      const bots = this.state.bots;
-      const bot = {};
+    const bots = this.state.bots;
+    const bot = {};
 
-      // initialize characteristics
-      bot.activeBotName = this.activeBotName;
-      bot.activeBotType = this.activeBotType;
-      bot.tasksCompleted = 0;
-      bot.isActive = false;
-      bot.tasks = fiveTasks;
+    // initialize characteristics
+    bot.botName = this.state.newBot.name;
+    bot.botType = this.state.newBot.type;
+    bot.tasksCompleted = 0;
+    bot.isActive = false;
+    bot.tasks = fiveTasks;
 
-      bots.push(bot);
-      this.setState({bots : bots});
-    };
+    bots.push(bot);
+    this.setState({bots : bots});
+    console.log(bots);
   };
 
   render() {
@@ -60,8 +58,7 @@ class App extends Component {
       <div className="container">
         <h3>Build a Bot</h3>
         <BotForm 
-          addBotNameToState = {this.addBotNameToState}
-          addBotTypeToState = {this.addBotTypeToState}
+          updateNewBot = {this.updateNewBot}
           addBotToState = {this.addBotToState}
         />
       </div>
