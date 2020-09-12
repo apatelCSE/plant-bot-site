@@ -13,7 +13,7 @@ class App extends Component {
       activeBotType : '',
       newBot: {
         name: '',
-        type: []
+        type: '',
       }
     };
 
@@ -24,6 +24,8 @@ class App extends Component {
   updateNewBot(e) {
     let value = e.target.value;
     let name = e.target.name;
+    console.log("Trying to add " + value + 
+    " to " + name);
     this.setState( prevState => {
         return {
             newBot : {
@@ -55,7 +57,6 @@ class App extends Component {
   render() {
     return(
       <div className="container">
-        <h3>Build a Bot</h3>
         <BotForm 
           updateNewBot = {this.updateNewBot}
           addBotToState = {this.addBotToState}
