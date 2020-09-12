@@ -30,8 +30,7 @@ class App extends Component {
                 ...prevState.newBot, [name]: value
             }
         }
-    }, () => console.log(this.state.newBot)
-    )
+    })
   };
 
   addBotToState() {

@@ -1,83 +1,27 @@
-import React, { Component } from 'react';
+import React from 'react';
+import {Button, Form, FormGroup, Label, Input, FormText} from 'reactstrap';
 
-/* Import Components */
-import Input from '../components/Input';
-import Select from '../components/Select';
-import Button from '../components/Button';
-
-class BotForm extends Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            newBotName : '',
-            newBotType : [],
-
-            typeOptions: ['Unipedal', 'Bipedal', 'Quadrupedal', 'Arachnid', 'Radial', 'Aeronautical']
-        }
-        this.handleNameChange = this.handleNameChange.bind(this);
-        this.handleTypeChange = this.handleTypeChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-    }
-
-    handleNameChange(e) {
-        let value = e.target.value;
-        this.setState({newBotName : value});
-        this.props.updateNewBot(e);
-    }
-
-    handleTypeChange(e) {
-        let value = e.target.value;
-        this.setState({newBotType : value});
-        this.props.updateNewBot(e);
-    }
-
-    handleSubmit(e) {
-        e.preventDefault();
-        console.log(this.state.newBotName);
-        console.log(this.state.newBotType);
-        if (this.state.newBotName === '' || this.state.newBotType === '') {
-            alert('Please initialize a name and a type.');
-        } else {
-            this.props.addBotToState();
-            this.setState({newBotName: "", newBotType: []})
-            console.log(this.state.newBotName);
-            console.log(this.state.newBotType);
-        }
-    }
-    
-    render() {
-        return(
-            <form className="container" onSubmit={this.handleSubmit}>
-                <Input inputType={'text'}
-                    title = {'Bot Name'}
-                    name = {'name'}
-                    value = {this.state.newBotName}
-                    placeholder = {'Enter the bot\'s name'}
-                    handleChange = {this.handleNameChange}
-                /> {/* Bot Name */}
-
-                <Select title={'Type'}
-                    name={'type'}
-                    options = {this.state.typeOptions}
-                    value = {this.state.newBotType}
-                    placeholder = {'Select Type'}
-                    handleChange = {this.handleTypeChange}
-                /> {/* Bot Type */}
-
-                <Button title = {'Build'}
-                    action = {this.handleSubmit}
-                    type = {'primary'}
-                    style = {buttonStyle}
-                /> {/* Build a Bot */}
-            </form>
-        );
-    }
-
-}
-
-const buttonStyle = {
-    margin : '10px'
+const BotForm = (props) => {
+    return(
+        <Form>
+            <FormGroup>
+                <Label for="botName">Name</Label>
+                <Input type="text" name="name" id="botName" placeholder="Terminator" />
+            </FormGroup>
+            <FormGoup>
+                <Label for="botType">type</Label>
+                <Input type="select" name="select" id="botType">
+                    <option>Unipedal</option>
+                    <option>Bipedal</option>                    <option>Unipedal</option>
+                    <option>Quadrupedal</option>
+                    <option>Arachnid</option>
+                    <option>Radial</option>
+                    <option>Aeronautical</option>
+                </Input>
+            </FormGoup>
+            <Button>Submit</Button>
+        </Form>
+    );
 }
 
 export default BotForm;

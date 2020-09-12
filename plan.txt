@@ -1,7 +1,20 @@
 Components of the React App:
-- Form to build the robot
-- Task Center where you can see what each robot is working on/activate tasks
-- Leaderboard to view task completion rankings
+- Robot Builder Form (DONE)
+- Task Center
+- Leaderboard
 
 Ideas:
-Maybe each task has a difficulty and that factors into the ranking
+- Maybe each task has a difficulty and that factors into the ranking
+- Animations!!
+
+"Changelog":
+
+I started by hard-coding my own form to make it fully customizable 
+and to help myself understand how React forms work. Now that I fully
+understand how to write a form, I feel comfortable switching to a
+Reactstrap-organized form, which will provide for a better user
+experience.
+
+Now, I have a list of bots and their tasks to complete. Need to:
+- Build a Task Center where you can click on the task and it starts
+- Remove the task from the list when it's complete 
