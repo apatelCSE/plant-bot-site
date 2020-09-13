@@ -31,12 +31,9 @@ class BotForm extends Component {
 
     submitForm(e) {
         e.preventDefault();
-        if (this.state.newBotName === '' || this.state.newBotType === '') {
-            alert('Please initialize a name and a type.');
-        } else {
-            this.props.addBotToState();
-            this.setState({newBotName: "", newBotType: []})
-        }
+        this.props.addBotToState();
+        this.setState({newBotName: ""});
+        this.setState({newBotType: ""});        
     }
 
     render() {
@@ -53,6 +50,7 @@ class BotForm extends Component {
                                 placeholder="Terminator"
                                 value={this.state.newBotName}
                                 onChange={this.handleNameChange}
+                                required
                             />
                         </FormGroup>
                     </Col>
@@ -63,7 +61,8 @@ class BotForm extends Component {
                                 type="select"
                                 name="type"
                                 value = {this.state.newBotType}
-                                onChange = {this.handleTypeChange}>
+                                onChange = {this.handleTypeChange}
+                                required>
                                 <option>Unipedal</option>
                                 <option>Bipedal</option>
                                 <option>Quadrupedal</option>

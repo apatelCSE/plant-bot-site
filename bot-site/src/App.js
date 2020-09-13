@@ -13,7 +13,8 @@ class App extends Component {
       activeBotType : '',
       newBot: {
         name: '',
-        type: '',
+        // default type
+        type: 'Unipedal',
       }
     };
 
@@ -24,8 +25,6 @@ class App extends Component {
   updateNewBot(e) {
     let value = e.target.value;
     let name = e.target.name;
-    console.log("Trying to add " + value + 
-    " to " + name);
     this.setState( prevState => {
         return {
             newBot : {
@@ -52,6 +51,14 @@ class App extends Component {
     bots.push(bot);
     this.setState({bots : bots});
     console.log(bots);
+    this.setState( prevState => {
+      return {
+          newBot : {
+              ...prevState.newBot, name: '',
+              ...prevState.newBot, type: 'Unipedal'
+          }
+      }
+    })
   };
 
   render() {
