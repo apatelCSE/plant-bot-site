@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {
-    Container, Col, Form,
+    Container, Row, Col, Form,
     FormGroup, Label, Input,
     Button
 } from 'reactstrap';
@@ -39,9 +39,10 @@ class BotForm extends Component {
     render() {
         return (
             <Container className="BotForm">
-                <h2>Initialize a Bot</h2>
+                <h2>Bot Initializer</h2>
                 <Form className="form" onSubmit={(e) => this.submitForm(e)}>
-                    <Col>
+                    <Row>
+                        <Col>
                         <FormGroup>
                             <Label>Name</Label>
                             <Input 
@@ -53,8 +54,10 @@ class BotForm extends Component {
                                 required
                             />
                         </FormGroup>
-                    </Col>
-                    <Col>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col>
                         <FormGroup>
                             <Label>Type</Label>
                             <Input
@@ -71,8 +74,13 @@ class BotForm extends Component {
                                 <option>Aeronautical</option>
                             </Input>
                         </FormGroup>
-                    </Col>
-                    <Button color="primary">Build!</Button>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col>
+                        <Button color="primary">Build!</Button>
+                        </Col>
+                    </Row>
                 </Form>
             </Container>
         );
