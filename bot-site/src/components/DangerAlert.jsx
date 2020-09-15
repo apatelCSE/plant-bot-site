@@ -1,17 +1,18 @@
-import React, { useState } from 'react';
-import {Alert} from 'reactstrap';
+import React, { useState, Component } from 'react';
+import {UncontrolledAlert} from 'reactstrap';
 
-const DangerAlert = (props) => {
-    const [visible, setVisible] = useState(true);
-    const onDismiss = () => setVisible(false);
+class DangerAlert extends Component {
+    constructor(props) {
+        super(props);
+    }
 
-    return (
-        <div>
-            <Alert color="danger" isOpen={visible} toggle={onDismiss}>
-                Please initialize a name and a type.
-            </Alert>
-        </div>
-    );
+    render() {
+        return (
+            <UncontrolledAlert color="danger">
+                {this.props.text}
+            </UncontrolledAlert>
+        );
+    }
 }
 
 export default DangerAlert;
