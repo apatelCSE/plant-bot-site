@@ -1,4 +1,16 @@
-# BOT-O-MAT
+# Welcome to Bot-O-Mat!
+Hello, world! This is the source code of my solution to the Bot-O-Mat challenge. This challenge allowed me to hone in my React skills to provide an enjoyable user experience, and I was able to play around with the Reactstrap library to add features that contribute to the application's aesthetic quality and responsiveness. I'm excited to take the skills I used in implementing this project and apply them to my personal site. Read below to run a demo from your machine!
+
+## How to Install
+1. Install Yarn from https://classic.yarnpkg.com/en/docs/install/.
+2. Clone/Download the repository onto your local machine.
+3. Use the command prompt to navigate to the main directory, `cd bot-o-mat-apatelCSE`.
+4. Navigate to the site files using `cd bot-site`.
+5. Run `yarn install` to install the project's dependencies and load the source code. 
+6. Run `yarn start` to launch a demo of the application on a live server.
+7. Create your first bot in the Bot Initializer to fill the Task Center and Leaderboard!
+
+# Bot-O-Mat Challenge Instructions
 Use any language to complete this challenge. The implementation is up to you: it can be a command-line application or have a graphical interface.
 
 Your application should collect a name and robot type from the types we list below. For each, it should create a Robot of the type the user chooses, e.g. Larry, Bipedal. 
