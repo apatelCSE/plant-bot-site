@@ -8,6 +8,7 @@ Hello, world! This is the source code of my solution to the Bot-O-Mat challenge.
 4. Navigate to the site files using `cd bot-site`.
 5. Run `yarn install` to install the project's dependencies and load the source code. 
 6. Run `yarn start` to launch a demo of the application on a live server.
+7. If you receive a "Permission Denied" error for `react-scripts`, please run the command `chmod +x node_modules/.bin/react-scripts` to reset the permissions and run `yarn start` again.
 7. Create your first bot in the Bot Initializer to fill the Task Center and Leaderboard!
 
 # Bot-O-Mat Challenge Instructions
