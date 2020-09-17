@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {
-    Col, Row, Card, Spinner, CardDeck,
+    Col, Row, Card, Spinner,
     CardTitle, CardText, CardSubtitle, CardBody
 } from 'reactstrap';
 import TaskCenter from './TaskCenter';
@@ -18,17 +18,17 @@ class TaskCards extends Component {
                             <CardText>
                                 <Row>
                                     <Col>
-                                    <CardSubtitle>{`${bot.botName} is working`}</CardSubtitle>
+                                        <CardSubtitle>{`${bot.botName} is working`}</CardSubtitle>
                                     </Col>
                                     <Col>
-                                    <Spinner color="primary"/>
+                                        <Spinner color="primary"/>
                                     </Col>
                                 </Row>
                             </CardText>
                             : null
                         }
                         {bot.score === 5 ?
-                            <h6>Congratulations! {bot.botName} has finished all their tasks! 🥳</h6>
+                            <h6>Congratulations! {bot.botName} has finished all of their tasks! 🥳</h6>
                             :
                             <TaskCenter
                                 bot={bot}
@@ -39,7 +39,6 @@ class TaskCards extends Component {
                         }
                     </CardBody>
                 </Card>
-
             ))}
             </div>
         );

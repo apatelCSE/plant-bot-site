@@ -70,3 +70,8 @@
     flex: 0 1 calc(25% - 1em);
   }
 }
+
+.svg {
+  max-width: 50%;
+  height: auto;
+}

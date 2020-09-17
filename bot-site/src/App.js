@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import {
-  Container, Row, Col, Jumbotron
-} from 'reactstrap';
+import {Container, Row, Col, Jumbotron} from 'reactstrap';
 import './App.css';
+import {ReactComponent as BotSVG} from './assets/bot.svg';
 import data                 from './assets/tasks';
 import BotForm              from './containers/BotForm';
 import TaskCards            from './containers/TaskCards';
@@ -27,6 +26,7 @@ class App extends Component {
     this.completeTask = this.completeTask.bind(this);
   };
 
+  // Function updates bot name or type from Bot Initializer
   updateNewBot(e) {
     let value = e.target.value;
     let name = e.target.name;
@@ -39,6 +39,7 @@ class App extends Component {
     })
   };
 
+  // Function adds initialized bot from Bot Initializer to the main data
   addBotToState() {
     const tasks = data.tasks;
     const fiveTasks = shuffleFive(tasks);
@@ -61,6 +62,7 @@ class App extends Component {
     leaderboardBots.push(leaderboardBot);
     this.setState({bots : bots});
     console.log(bots);
+    // reset default characteristics
     this.setState( prevState => {
       return {
           newBot : {
@@ -71,12 +73,13 @@ class App extends Component {
     })
   };
 
+  // Function responds to user "activating" a task and updates the robot
+  // as the task is timed
   completeTask(task, botIndex, taskIndex) {
     const bots = this.state.bots;
     const leaderboardBots = this.state.leaderboardBots;
     let TasksToComplete = bots[botIndex].tasks;
 
-    //bots[botIndex].tasks[taskIndex].completing = true;
     bots[botIndex].isActive = true;
     this.setState({bots : bots});
 
@@ -96,7 +99,13 @@ class App extends Component {
           <Jumbotron>
             <h1 className="display-3">Welcome to Bot-O-Mat!</h1>
             <hr />
-            <p>Bot-O-Mat is a task organizer that allows you to create robots that get your housework done quickly and efficiently. You can start your different robots in the Task Center and see how they measure up against each other in the Leaderboard. Get started by creating your first bot in the Bot Initializer!</p>
+            <Col>
+              <BotSVG className="svg" />
+            </Col>
+            <hr />
+            <Row>
+              <p>Bot-O-Mat is a task organizer that allows you to create robots that get your housework done quickly and efficiently. You can start your different robots in the Task Center and see how they measure up against each other in the Leaderboard. Get started by creating your first bot in the Bot Initializer!</p>
+            </Row>
           </Jumbotron>
         </Row>
         <Row>
@@ -111,7 +120,6 @@ class App extends Component {
             <div id="leaderboard">
             {this.state.bots.length ?
             <Leaderboard bots={this.state.leaderboardBots} />
-            //<Leaderboard users={this.state.bots} paginate={this.state.paginate}/>
             : <h6>There's nothing to show here yet. Create and activate a bot to see its performance here!</h6>
             }
             </div>
