@@ -1,11 +1,7 @@
-import React, { useState, Component } from 'react';
+import React, { Component } from 'react';
 import {UncontrolledAlert} from 'reactstrap';
 
 class DangerAlert extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return (
             <UncontrolledAlert color="danger">

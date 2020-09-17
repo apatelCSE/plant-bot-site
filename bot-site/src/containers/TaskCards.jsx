@@ -1,19 +1,18 @@
 import React, {Component} from 'react';
 import {
-    Col, Row, Card, Spinner, 
+    Col, Row, Card, Spinner, CardDeck,
     CardTitle, CardText, CardSubtitle, CardBody
 } from 'reactstrap';
 import TaskCenter from './TaskCenter';
+import '../App.css';
 
 class TaskCards extends Component {
-    constructor(props) {
-        super(props);
-    }
     render() {
         return (
-            this.props.bots.map((bot, i) => (
-                <Card key={i}>
-                    <CardTitle><h5>{bot.botName} the {bot.botType}'s Tasks:</h5></CardTitle>
+            <div className="card-container">
+            {this.props.bots.map((bot, i) => (
+                <Card className="card" key={i} outline color="primary">
+                    <CardTitle><h5>Uncompleted Tasks for {bot.botName} the {bot.botType}:</h5></CardTitle>
                     <CardBody>
                         {bot.isActive ?
                             <CardText>
@@ -22,22 +21,27 @@ class TaskCards extends Component {
                                     <CardSubtitle>{`${bot.botName} is working`}</CardSubtitle>
                                     </Col>
                                     <Col>
-                                    <Spinner color="success"/>
+                                    <Spinner color="primary"/>
                                     </Col>
                                 </Row>
                             </CardText>
                             : null
                         }
+                        {bot.score === 5 ?
+                            <h6>Congratulations! {bot.botName} has finished all their tasks! 🥳</h6>
+                            :
                             <TaskCenter
                                 bot={bot}
                                 botIndex={i}
                                 tasks={bot.tasks}
                                 completeTask={this.props.completeTask}
                             />
+                        }
                     </CardBody>
                 </Card>
 
-            ))
+            ))}
+            </div>
         );
     }
 }

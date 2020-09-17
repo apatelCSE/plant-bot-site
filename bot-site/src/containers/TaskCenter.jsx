@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import {
     ListGroup, ListGroupItem, Container, 
-    Alert, Col, Row
+    Col
 } from 'reactstrap';
 import DangerAlert from '../components/DangerAlert';
 
@@ -15,8 +15,10 @@ class TaskCenter extends Component {
 
     showAlert() {
         const myAlert = <DangerAlert
-        text="This bot is still working!" />
-        ReactDOM.render(myAlert, document.getElementById('list-item'));
+        text="This bot is still working!" />;
+        if (true) {
+            ReactDOM.render(myAlert, document.getElementById('list-item'));
+        }
     }
 
     render() {
