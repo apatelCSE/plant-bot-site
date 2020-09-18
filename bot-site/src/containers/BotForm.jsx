@@ -38,7 +38,7 @@ class BotForm extends Component {
     render() {
         return (
             <Container className="BotForm">
-                <h2>Bot Initializer</h2>
+                <h2>Plant Nursery</h2>
                 <Form className="form" onSubmit={(e) => this.submitForm(e)}>
                     <Row>
                         <Col>
@@ -47,7 +47,7 @@ class BotForm extends Component {
                             <Input 
                                 type="text"
                                 name="name"
-                                placeholder="Terminator"
+                                placeholder="Professor Plant"
                                 value={this.state.newBotName}
                                 onChange={this.handleNameChange}
                                 required
@@ -65,19 +65,25 @@ class BotForm extends Component {
                                 value = {this.state.newBotType}
                                 onChange = {this.handleTypeChange}
                                 required>
-                                <option>Unipedal</option>
-                                <option>Bipedal</option>
-                                <option>Quadrupedal</option>
-                                <option>Arachnid</option>
-                                <option>Radial</option>
-                                <option>Aeronautical</option>
+                                <option>Spider plant</option>
+                                <option>Alocasia</option>
+                                <option>Pilea peperomides</option>
+                                <option>Aloe vera</option>
+                                <option>Dieffenbachia</option>
+                                <option>Wandering jew</option>                                <option>Unipedal</option>
+                                <option>Radiator plant</option>
+                                <option>String of pearls</option>
+                                <option>Golden pothos</option>
+                                <option>Pothos</option>
+                                <option>Philodendron</option>
+                                <option>Monstera</option>
                             </Input>
                         </FormGroup>
                         </Col>
                     </Row>
                     <Row>
                         <Col>
-                        <Button color="primary">Build!</Button>
+                        <Button color="success">Buy!</Button>
                         </Col>
                     </Row>
                 </Form>

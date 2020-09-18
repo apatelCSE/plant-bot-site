@@ -11,7 +11,7 @@ class TaskCards extends Component {
         return (
             <div className="card-container">
             {this.props.bots.map((bot, i) => (
-                <Card className="card" key={i} outline color="primary">
+                <Card className="card" key={i} outline color="success">
                     <CardTitle><h5>Uncompleted Tasks for {bot.botName} the {bot.botType}:</h5></CardTitle>
                     <CardBody>
                         {bot.isActive ?
@@ -21,14 +21,14 @@ class TaskCards extends Component {
                                         <CardSubtitle>{`${bot.botName} is working`}</CardSubtitle>
                                     </Col>
                                     <Col>
-                                        <Spinner color="primary"/>
+                                        <Spinner color="success"/>
                                     </Col>
                                 </Row>
                             </CardText>
                             : null
                         }
                         {bot.score === 5 ?
-                            <h6>Congratulations! {bot.botName} has finished all of their tasks! 🥳</h6>
+                            <h6>Congratulations! You've finished all of the tasks for {bot.botName}. They grow up so fast! 🥳</h6>
                             :
                             <TaskCenter
                                 bot={bot}

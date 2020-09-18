@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Container, Row, Col, Jumbotron} from 'reactstrap';
 import './App.css';
-import {ReactComponent as BotSVG} from './assets/bot.svg';
+import {ReactComponent as PlantSVG} from './assets/plant.svg';
 import data                 from './assets/tasks';
 import BotForm              from './containers/BotForm';
 import TaskCards            from './containers/TaskCards';
@@ -17,7 +17,7 @@ class App extends Component {
       newBot: {
         name: '',
         // default type
-        type: 'Unipedal',
+        type: 'Spider plant',
       },
     };
 
@@ -67,7 +67,7 @@ class App extends Component {
       return {
           newBot : {
               ...prevState.newBot, name: '',
-              ...prevState.newBot, type: 'Unipedal'
+              ...prevState.newBot, type: 'Spider plant'
           }
       }
     })
@@ -97,14 +97,14 @@ class App extends Component {
       <Container className="App">
         <Row>
           <Jumbotron>
-            <h1 className="display-3">Welcome to Bot-O-Mat!</h1>
+            <h1 className="display-3">Welcome to PlantLife!</h1>
             <hr />
             <Col>
-              <BotSVG className="svg" />
+              <PlantSVG className="svg" />
             </Col>
             <hr />
             <Row>
-              <p>Bot-O-Mat is a task organizer that allows you to create robots that get your housework done quickly and efficiently. You can start your different robots in the Task Center and see how they measure up against each other in the Leaderboard. Get started by creating your first bot in the Bot Initializer!</p>
+              <p>PlantLife is a task organizer that helps you take care of your houseplants! You can buy new plants and complete care tasks for them in the Task Center and see how they measure up against each other in the Leaderboard. Get started by buying your first plant at the Plant Nursery!</p>
             </Row>
           </Jumbotron>
         </Row>
@@ -120,7 +120,7 @@ class App extends Component {
             <div id="leaderboard">
             {this.state.bots.length ?
             <Leaderboard bots={this.state.leaderboardBots} />
-            : <h6>There's nothing to show here yet. Create and activate a bot to see its performance here!</h6>
+            : <h6>There's nothing to show here yet. Buy your first plant and start taking care of it to see its growth here!</h6>
             }
             </div>
           </Col>
@@ -133,7 +133,7 @@ class App extends Component {
             <TaskCards 
               bots={this.state.bots}
               completeTask={this.completeTask}/>
-          : <h6>There's nothing to show here yet. Create a bot to see its tasks here!</h6>
+          : <h6>There's nothing to show here yet. Buy a houseplant to see its tasks here!</h6>
           }
           </Col>
         </Row>
