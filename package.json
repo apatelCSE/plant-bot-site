@@ -2,7 +2,7 @@
   "name": "bot-site",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://apatelcse.github.io/plant-bots/bot-site",
+  "homepage": "https://apatelcse.github.io/plant-bot-site",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
