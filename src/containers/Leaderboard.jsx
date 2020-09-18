@@ -3,7 +3,7 @@ import './Leaderboard.css';
 
 function BarGroup(props) {
     let barPadding = 2;
-    let barColour = '#007bff';
+    let barColour = '#28a746';
     // WidthScale sets width of each bar
     let widthScale = d => d * 50;
   
