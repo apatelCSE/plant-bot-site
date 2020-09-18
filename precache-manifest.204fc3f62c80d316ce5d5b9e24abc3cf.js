@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b0e005e95f36d61d0b2b11a91723709b",
+    "revision": "9876b705cdcec2da547fbaf51115eeba",
     "url": "/plant-bot-site/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/plant-bot-site/static/css/2.11829350.chunk.css"
   },
   {
-    "revision": "79ba31fa1d985c858ffc",
+    "revision": "55721597cf9430afebc5",
     "url": "/plant-bot-site/static/css/main.6a4556ae.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/plant-bot-site/static/js/2.b23deb3e.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "79ba31fa1d985c858ffc",
-    "url": "/plant-bot-site/static/js/main.d9cf85cf.chunk.js"
+    "revision": "55721597cf9430afebc5",
+    "url": "/plant-bot-site/static/js/main.31051e24.chunk.js"
   },
   {
     "revision": "5d0a99e06ac2860924f8",
