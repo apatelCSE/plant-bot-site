@@ -5,8 +5,7 @@ Hello, world! This is the source code of PlantLife, a React application I built 
 1. Install Yarn from https://classic.yarnpkg.com/en/docs/install/.
 2. Clone/Download the repository onto your local machine.
 3. Use the command prompt to navigate to the main directory, `cd plant-bots`.
-4. Navigate to the site files using `cd bot-site`.
-5. Run `yarn install` to install the project's dependencies and load the source code. 
-6. Run `yarn start` to launch a demo of the application on a live server.
-7. If you receive a "Permission Denied" error for `react-scripts`, please run the command `chmod +x node_modules/.bin/react-scripts` to reset the permissions and run `yarn start` again.
+4. Run `yarn install` to install the project's dependencies and load the source code. 
+5. Run `yarn start` to launch a demo of the application on a live server.
+6. If you receive a "Permission Denied" error for `react-scripts`, please run the command `chmod +x node_modules/.bin/react-scripts` to reset the permissions and run `yarn start` again.
 7. Buy your first plant in the Plant Nursery to fill the Task Center and Leaderboard!
